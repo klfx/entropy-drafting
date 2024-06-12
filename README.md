@@ -31,11 +31,11 @@ Note 2: The first run might take a while since the models have to be downloaded.
 | --draft                  | Draft Model  |                                    |
 | --input                  | Input text  |                                       |
 | --max_new_tokens         | How many tokens to generate    | 100                                   |
-| --entropy_drafting       | Enable to use Entropy Drafting  | True                                    |
+| --entropy_drafting       | Include flag to enable Entropy Drafting  |                                     |
 | --entropy_drafting_type  | Threshold Strategy(```static```, ```ma``` (moving average) or ```cum``` (cumulative static)) | static |
 
 
 ### Example
 
-```python entropy_drafting.py --target "facebook/opt-1.3b" --draft "facebook/opt-125m" --input "The yellow funny dog" --max_new_tokens 100 --entropy_drafting True --entropy_drafting_type "static"```
+```python entropy_drafting.py --target "facebook/opt-2.7b" --draft "facebook/opt-125m" --input "Towering over Kyiv for six decades, Hotel Ukraine has witnessed" --max_new_tokens 100 --entropy_drafting --entropy_drafting_type "static"```
 

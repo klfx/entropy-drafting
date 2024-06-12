@@ -10,7 +10,7 @@ parser.add_argument('--target', type=str, help='Target Model')
 parser.add_argument('--draft', type=str, help='Draft Model')
 parser.add_argument('--input', type=str, help='Input Text')
 parser.add_argument('--max_new_tokens', type=int, default=100, help='Max New Tokens to generate')
-parser.add_argument('--entropy_drafting', type=bool, default=True, help='Use Entropy Drafting')
+parser.add_argument('--entropy_drafting', action='store_true', default=False, help='Use Entropy Drafting')
 parser.add_argument('--entropy_drafting_type', type=str, default='static', help='Entropy Drafting Type')
 
 args = parser.parse_args()
@@ -53,7 +53,7 @@ def main():
     inputs = tokenizer(args.input, return_tensors="pt").to(device)
 
     start_time = time.time()
-    if args.entropy_drafting:
+    if not args.entropy_drafting:
         tokens, dml, tml = model.generate(
             **inputs,
             assistant_model=model_draft,
