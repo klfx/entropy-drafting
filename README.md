@@ -8,7 +8,7 @@ This is the code repository for the bachelor thesis "Effiziente Text-Generierung
 
 The goal of this thesis is to further improve the efficiency of speculative decoding by using an entropy-based speculation length (or candidate length). This allows the draft model to generate tokens as long as it is confident in the prediction before the candidate is handed over to the target model for validation. Three threshold strategies were developed and evaluated. The implementation is based on the Hugging Face Transformers library.
 
-For more information and the full thesis, please refer to: TBD
+For more information and the full thesis, please refer to: [entropy_drafting_thesis.pdf](https://github.com/klfx/entropy-drafting/blob/main/entropy_drafting_thesis.pdf)
 
 ## Generate with Entropy Drafting
 
